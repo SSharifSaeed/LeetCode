@@ -1,0 +1,27 @@
+int largestPerimeter(int* nums, int numsSize) {
+    int temp, temp2 = 0, val;
+
+    if (numsSize < 3) {
+        return 0;
+    }
+
+    for (int pass = 0; pass < numsSize - 1; pass++) {
+        for (int i = 0; i < numsSize - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                temp = nums[i];
+                nums[i] = nums[i + 1];
+                nums[i + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = numsSize - 1; i >= 2; i--) {
+        int a = nums[i], b = nums[i - 1], c = nums[i - 2];
+        if (b + c > a) {               
+            temp2 = a + b + c;         
+            break;                     
+        }
+    }
+
+    return temp2;
+}
