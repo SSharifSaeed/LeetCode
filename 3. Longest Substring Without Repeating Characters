@@ -1,0 +1,19 @@
+int lengthOfLongestSubstring(char* s) {
+    int index = 0, count;
+    for (int i = 0; s[i] != '\0'; i++){
+        int j;
+        for (j = 0; j < i; j++){
+            if(s[i] == s[j]){
+                break;
+            }
+        }
+        if(j == i){
+            s[index++] = s[i];
+        }
+    }
+    s[index] = '\0';
+
+    count = strlen(s);
+    return printf("%s", s);  
+    //return count;
+}
