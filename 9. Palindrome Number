@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdbool.h>
+bool isPalindrome(int x) {
+    unsigned int rev_x = 0, temp;
+    temp = x;
+    while (x > 0){
+        rev_x = rev_x * 10 + x % 10;
+        x = x / 10;
+    }
+
+    if (rev_x == temp){
+        return true;
+    }
+    
+    return 0;
+}
